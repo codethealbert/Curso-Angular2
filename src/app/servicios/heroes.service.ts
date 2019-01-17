@@ -66,6 +66,19 @@ export class HeroesService {
     getHeroe( idx: string) {
       return this.heroes[idx];
     }
+
+    buscarHeroe( termino: string): Heroe[] {
+      const heroesArr: Heroe[] = [];
+      termino = termino.toLowerCase(); // Para pasar a minusculas lo que traiga del input de busqueda
+
+      for ( const heroe of this.heroes) {
+        const nombre = heroe.nombre.toLowerCase();
+        if (nombre.indexOf(termino) >= 0) { // Buscar un string dentro del nombre indexOf. Si arroja 0 o mas, es k dio resultados. Si arroja -1 es k no encontre coincidencias
+          heroesArr.push(heroe);
+        }
+      }
+      return heroesArr;
+    }
 }
 
 export interface Heroe {
