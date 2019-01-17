@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HeroesService, Heroe } from './../../servicios/Heroes.service';
+import { HeroesService, Heroe } from '../../servicios/heroes.service';
 import { Router } from '@angular/router';
 
 
@@ -20,7 +20,7 @@ export class HeroesComponent implements OnInit {
 
   ngOnInit() {
     // console.log('ngOnInit');
-    this.heroes = this._heroesservice.getHeoes();
+    this.heroes = this._heroesservice.getHeroes();
     // console.log(this.heroes);
   }
 

@@ -7,7 +7,7 @@ import { APP_ROUTING } from './app.routers';
 
 
 // servicios
-import { HeroesService } from './servicios/Heroes.service';
+import { HeroesService } from './servicios/heroes.service';
 
 
 // Componentes
