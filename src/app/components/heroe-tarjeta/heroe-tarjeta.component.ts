@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core'; // Input permite recibir un parametro desde afuera
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core'; // Input permite recibir un parametro desde afuera
 import { Router } from '@angular/router';
 
 @Component({
@@ -9,13 +9,19 @@ export class HeroeTarjetaComponent implements OnInit {
 
   @Input() heroe: any = {}; // Para recibir el heroe desde afuera. En este caso desde heroes.component
   @Input() index: number;
-  constructor(private router: Router) { }
+
+  @Output() heroeSeleccionado: EventEmitter<number>; // Nombre del evento que el padre debe estar escuchando
+
+  constructor(private router: Router) {
+    this.heroeSeleccionado = new EventEmitter(); // Inicializar el eventemitter
+  }
 
   ngOnInit() {
   }
 
   verHeroe() {
-    console.log(this.index);
+    // console.log(this.index);
     this.router.navigate (['/heroe', this.index]);
+    // this.heroeSeleccionado.emit(this.index); // Emite lo que yo te voy a decir
   }
 }

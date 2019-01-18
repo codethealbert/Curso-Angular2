@@ -5,5 +5,5 @@
 <div class="card-columns">
   <!-- [heroe] es la variable declarada en heroe-tarjeta.component -->
   <!-- ="heroe" va a ser el dato que se le mandara al heroe-tarjeta-component-->
-  <app-heroe-tarjeta [heroe]="heroe" [index]="i" *ngFor="let heroe of heroes; let i = index"></app-heroe-tarjeta>
+  <app-heroe-tarjeta (heroeSeleccionado)="verHeroe( $event )" [heroe]="heroe" [index]="i" *ngFor="let heroe of heroes; let i = index"></app-heroe-tarjeta>
 </div>
