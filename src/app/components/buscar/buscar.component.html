@@ -1,4 +1,22 @@
-<h1>Buscando: <small>{{ termino }}</small></h1>
+<div class="row animated fadeIn fast" *ngIf="heroes.length == 0">
+  <div class="col-md-12">
+    <div class="alert alert-info" role="alert">
+      <h4 class="alert-heading">No existen resultados para: {{ termino }}</h4>
+      <p>Favor de intentar nuevamente con otros datos para busqueda.</p>
+      <p class="mb-0">GRACIAS :)</p>
+    </div>
+  </div>
+</div>
+
+
+<div class="row animated fadeIn fast" *ngIf="heroes.length >= 1">
+  <div class="col-md-12">
+    <div class="alert alert-success" role="alert">
+      <h2 class="alert-heading">Resultados de la busqueda para: {{ termino }}</h2>
+    </div>
+  </div>
+</div>
+
 <hr>
 
 <div class="card-columns">
@@ -8,8 +26,8 @@
       <h5 class="card-title">{{ heroe.nombre }}</h5>
       <p class="card-text">{{ heroe.bio }}</p>
       <p class="card-text"><small class="text-muted">{{ heroe.aparicion }}</small></p>
-      <button (click)="verHeroe(i)" 
-        class="btn btn-outline-primary btn-block">Vér mas...</button>
+      <!-- <button (click)="verHeroe(i)" 
+        class="btn btn-outline-primary btn-block">Vér mas...</button> -->
       <!-- <a [routerLink]="['/heroe',i]" class="btn btn-outline-primary">Vér mas Link...</a> -->
     </div>
   </div>
